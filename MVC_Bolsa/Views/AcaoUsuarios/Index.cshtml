@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MVC_Bolsa.Models.AcaoUsuario>
+
+@{
+    ViewData["Title"] = "Transações";
+}
+
+<h2>Transações</h2>
+
+<p>
+    <a asp-action="Create">Realizar nova Transação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAcao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuario.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAcao.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotal)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

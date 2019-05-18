@@ -1,0 +1,45 @@
+﻿@model MVC_Bolsa.Models.AcaoUsuario
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você tem certeza que deseja excluir esta ação?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUsuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdUsuario.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdAcao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdAcao.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorTotal)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar para a Listagem</a>
+    </form>
+</div>
